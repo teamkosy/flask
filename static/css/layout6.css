@@ -1,0 +1,60 @@
+.container {
+  width: 1500px;
+  margin: auto;
+}
+.container div {
+  vertical-align: middle;
+}
+.top {
+  margin-top: 10px;
+  width: 1500px;
+  height: 80px;
+  display: table;
+}
+.middle {
+  margin-top: 5px;
+  width: 1500px;
+  height: 650px;
+  position: relative;
+}
+.middle-left {
+  position: absolute;
+  top: 0px;
+  width: 490px;
+  height: 600px;
+}
+.middle-left-1 {
+  width: 490px;
+  height: 150px;
+}
+.middle-left-2 {
+  margin-top: 10px;
+  width: 490px;
+  height: 150px;
+}
+.middle-left-3 {
+  margin-top: 10px;
+  width: 490px;
+  height: 150px;
+}
+.middle-left-4 {
+  margin-top: 10px;
+  width: 490px;
+  height: 150px;
+}
+.middle-right {
+  position: relative;
+  top: 20px;
+  left: 500px;
+  width: 1000px;
+  height: 600px;
+}
+.bottom {
+  position: relative;
+  margin-top: 150px;
+  margin-bottom: 0px;
+  width: 1500px;
+  height: 30px;
+  background-color: #5d5d5d;
+  color: #fff;
+}

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Kosy</title>
+    <link rel="stylesheet" type="text/css" href="static/css/main.css">
+    <link rel="stylesheet" type="text/css" href="static/css/menu.css">
+    <link rel="stylesheet" type="text/css" href="static/css/layout3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <link rel="icon" href="static/img/favicon.png">
+    {% with messages = get_flashed_messages() %}
+	{% if messages %}
+	{% for message in messages %}
+	<script>
+		alert('{{message}}')
+	</script>
+	{% endfor %}
+	{% endif %}
+    {% endwith %}
+
+</head>
+
+<body>
+<div class="container">
+  <!-- TOP -->
+  <div class="top">
+    <!-- 상단 메뉴 -->
+    <nav class="navigation">
+      <ul class="menu">
+        <li class="menu__item">
+          <a href="/" class="menu__link">
+          <img src="static/img/logo2.png"></a>
+        </li>
+
+        <li class="menu__item">
+          <a href="/kosy" class="menu__link">
+            <span class="menu__title">
+              <span class="menu__first-word" data-hover="Team">
+                Team
+              </span>
+              <span class="menu__second-word" data-hover="Kosy">
+                Kosy
+              </span>
+            </span>
+          </a>
+        </li>
+
+        <li class="menu__item">
+          <a href="/data" class="menu__link">
+            <span class="menu__title">
+              <span class="menu__first-word" data-hover="Data">
+                Data
+              </span>
+              <span class="menu__second-word" data-hover="분석">
+                분석
+              </span>
+            </span>
+          </a>
+        </li>
+
+        <li class="menu__item">
+          <a href="/map" class="menu__link">
+            <span class="menu__title">
+              <span class="menu__first-word" data-hover="충전소">
+                충전소
+              </span>
+              <span class="menu__second-word" data-hover="찾기">
+                찾기
+              </span>
+            </span>
+          </a>
+        </li>
+
+        <li class="menu__item">
+          <a href="/kosyInfo" class="menu__link">
+            <span class="menu__title">
+              <span class="menu__first-word" data-hover="Kosy">
+                Kosy
+              </span>
+              <span class="menu__second-word" data-hover="Info">
+                Info
+              </span>
+            </span>
+          </a>
+        </li>
+
+        <li class="menu__item">
+          <a href="/web" class="menu__link">
+            <span class="menu__title">
+              <span class="menu__first-word" data-hover="Web">
+                Web
+              </span>
+              <span class="menu__second-word" data-hover="Data">
+                Data
+              </span>
+            </span>
+          </a>
+        </li>
+
+        <li class="menu__item">
+          <a href="/ment" class="menu__link">
+            <span class="menu__title">
+              <span class="menu__first-word" data-hover="Kosy">
+                Kosy
+              </span>
+              <span class="menu__second-word" data-hover="Ment">
+                Ment
+              </span>
+            </span>
+          </a>
+        </li>
+
+        {% if session.get('logFlag') != True %}
+        <li class="menu__item">
+          <a href="/login" class="menu__link">
+            <span class="menu__title">
+              <span class="menu__first-word" data-hover="Log">
+                Log
+              </span>
+              <span class="menu__second-word" data-hover="In">
+                In
+              </span>
+            </span>
+          </a>
+        </li>
+        {% else %}
+        <li class="menu__item">
+          <a href="/myPage" class="menu__link">
+            <span class="menu__title">
+              <span class="menu__first-word" data-hover="My">
+                My
+              </span>
+              <span class="menu__second-word" data-hover="Page">
+                Page
+              </span>
+            </span>
+          </a>
+        </li>
+        {% endif %}
+
+        {% if session.get('logFlag') == True %}
+        <li class="menu__item">
+          <a href="/logOut" class="menu__link">
+            <span class="menu__title">
+              <span class="menu__first-word" data-hover="Log">
+                Log
+              </span>
+              <span class="menu__second-word" data-hover="Out">
+                Out
+              </span>
+            </span>
+          </a>
+        </li>
+        {% endif %}
+      </ul>
+    </nav>
+</div>
+    <!-- 상단 메뉴 끝 -->
+
+
+  <!-- MIDDLE -->
+  <div class="middle">
+
+    <div class="middle-left">
+
+    </div>
+
+      <div class="middle-center">
+        <div align="center">
+            <h1>{{ session['uid'] }}님 정보 수정</h1>
+            <hr>
+            <form action="/modifyOk" method="get">
+                ID : {{ session['uid'] }} <br>
+                <br> PW : <input type="text" name="upwd" value={{upwd}}><br>
+                <br> Name : <input type="text" name="uname" value={{uname}}><br>
+                <br> 닉네임 : <input type="text" name="unick" value={{unick}}><br>
+                <br> TEL : <select name="uphone1">
+                    <option>010</option>
+                    <option>011</option>
+                    <option>016</option>
+                    <option>018</option>
+                    <option>019</option>
+                </select> - <input type="text" name="uphone2" value={{phone2}}> - <input type="text"
+                    name="uphone3" value={{phone3}}><br>
+                <br> 성별 : <input type="radio" name="ugender" value="man">남자
+                <input type="radio" name="ugender" value="woman">여자<br>
+                <br>
+                좋아하는 차종 : <input type="checkbox" name="sedan">세단
+                <input type="checkbox" name="suv">SUV
+                <input type="checkbox" name="mini">경차
+                <input type="checkbox" name="elec">전기차
+                <hr>
+                <input type="submit" value="수정하기"> <input type="reset"
+                    value="초기화">
+            </form>
+            <hr>
+            <a href="/myPage">[Back]</a>
+
+            </div>
+      </div>
+
+      <div class="middle-right">
+
+      </div>
+    </div>
+    </div>
+  <div class="bottom">
+    <address>
+      <h3>2021.01.04 / Team Kosy / shimwh81@naver.com / Big Data 분석</h3>
+    </address>
+  </div>
+
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+.container {
+  width: 1500px;
+  margin: auto;
+}
+.container div {
+  vertical-align: middle;
+}
+.top {
+  margin-top: 10px;
+  width: 1500px;
+  height: 80px;
+  display: table;
+}
+.middle {
+  margin-top: 5px;
+  width: 1500px;
+  height: 600px;
+  position: relative;
+}
+.middle-left {
+  position: absolute;
+  top: 0px;
+  width: 150px;
+  height: 600px;
+
+}
+.middle-center {
+  position: absolute;
+  top: 0px;
+  left: 160px;
+  width: 1180px;
+  height: 600px;
+
+}
+.middle-right {
+  position: absolute;
+  left: 1350px;
+  width: 150px;
+  height: 600px;
+
+}
+.bottom {
+  margin-top: 50px;
+  margin-bottom: 0px;
+  width: 1500px;
+  height: 30px;
+  background-color: #5d5d5d;
+  color: #fff;
+}

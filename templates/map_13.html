@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Kosy</title>
+    <link rel="stylesheet" type="text/css" href="static/css/main.css">
+    <link rel="stylesheet" type="text/css" href="static/css/menu.css">
+    <link rel="stylesheet" type="text/css" href="static/css/layout8.css">
+    <link rel="stylesheet" type="text/css" href="static/css/map_menu.css">
+    <link rel="stylesheet" type="text/css" href="static/css/map.css">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <link rel="icon" href="static/img/favicon.png">
+    <script type="text/javascript" src="static/js/jquery-3.5.1.min.js"></script>
+
+</head>
+
+<body>
+<div class="container">
+  <!-- TOP -->
+  <div class="top">
+    <!-- 상단 메뉴 -->
+    <nav class="navigation">
+      <ul class="menu">
+        <li class="menu__item">
+          <a href="/" class="menu__link">
+          <img src="static/img/logo2.png"></a>
+        </li>
+
+        <li class="menu__item">
+          <a href="/kosy" class="menu__link">
+            <span class="menu__title">
+              <span class="menu__first-word" data-hover="Team">
+                Team
+              </span>
+              <span class="menu__second-word" data-hover="Kosy">
+                Kosy
+              </span>
+            </span>
+          </a>
+        </li>
+
+        <li class="menu__item">
+          <a href="/data" class="menu__link">
+            <span class="menu__title">
+              <span class="menu__first-word" data-hover="Data">
+                Data
+              </span>
+              <span class="menu__second-word" data-hover="분석">
+                분석
+              </span>
+            </span>
+          </a>
+        </li>
+
+        <li class="menu__item">
+          <a href="/map" class="menu__link">
+            <span class="menu__title">
+              <span class="menu__first-word" data-hover="충전소">
+                충전소
+              </span>
+              <span class="menu__second-word" data-hover="찾기">
+                찾기
+              </span>
+            </span>
+          </a>
+        </li>
+
+        <li class="menu__item">
+          <a href="/kosyInfo" class="menu__link">
+            <span class="menu__title">
+              <span class="menu__first-word" data-hover="Kosy">
+                Kosy
+              </span>
+              <span class="menu__second-word" data-hover="Info">
+                Info
+              </span>
+            </span>
+          </a>
+        </li>
+
+        <li class="menu__item">
+          <a href="/web" class="menu__link">
+            <span class="menu__title">
+              <span class="menu__first-word" data-hover="Web">
+                Web
+              </span>
+              <span class="menu__second-word" data-hover="Data">
+                Data
+              </span>
+            </span>
+          </a>
+        </li>
+
+        <li class="menu__item">
+          <a href="/ment" class="menu__link">
+            <span class="menu__title">
+              <span class="menu__first-word" data-hover="Kosy">
+                Kosy
+              </span>
+              <span class="menu__second-word" data-hover="Ment">
+                Ment
+              </span>
+            </span>
+          </a>
+        </li>
+
+        {% if session.get('logFlag') != True %}
+        <li class="menu__item">
+          <a href="/login" class="menu__link">
+            <span class="menu__title">
+              <span class="menu__first-word" data-hover="Log">
+                Log
+              </span>
+              <span class="menu__second-word" data-hover="In">
+                In
+              </span>
+            </span>
+          </a>
+        </li>
+        {% else %}
+        <li class="menu__item">
+          <a href="/myPage" class="menu__link">
+            <span class="menu__title">
+              <span class="menu__first-word" data-hover="My">
+                My
+              </span>
+              <span class="menu__second-word" data-hover="Page">
+                Page
+              </span>
+            </span>
+          </a>
+        </li>
+        {% endif %}
+
+        {% if session.get('logFlag') == True %}
+        <li class="menu__item">
+          <a href="/logOut" class="menu__link">
+            <span class="menu__title">
+              <span class="menu__first-word" data-hover="Log">
+                Log
+              </span>
+              <span class="menu__second-word" data-hover="Out">
+                Out
+              </span>
+            </span>
+          </a>
+        </li>
+        {% endif %}
+      </ul>
+    </nav>
+</div>
+    <!-- 상단 메뉴 끝 -->
+
+
+  <!-- MIDDLE -->
+  <div class="middle">
+      <div class="middle-left">
+
+    </div>
+
+    <div class="middle-center">
+        <div class="middle-center-1">
+          <div align="center">
+          <h1><img src="/static/img/ev.png">Team Kosy Map</h1>
+
+              <ul>
+        <li><a href="/map" class="ev">서울</a></li>
+                <li><a href="/map_2" class="ev">인천</a></li>
+                <li><a href="/map_3" class="ev">경기</a></li>
+                <li><a href="/map_4" class="ev">세종</a></li>
+                <li><a href="/map_5" class="ev">대전</a></li>
+                <li><a href="/map_6" class="ev">대구</a></li>
+                <li><a href="/map_7" class="ev">광주</a></li>
+                <li><a href="/map_8" class="ev">울산</a></li>
+                <li><a href="/map_9" class="ev">부산</a></li>
+                <li><a href="/map_10" class="ev">강원</a></li>
+                <li><a href="/map_11" class="ev">충북</a></li>
+                <li><a href="/map_12" class="ev">충남</a></li>
+                <li><a href="/map_13" class="ev">전북</a></li>
+                <li><a href="/map_14" class="ev">전남</a></li>
+                <li><a href="/map_15" class="ev">경북</a></li>
+                <li><a href="/map_16" class="ev">경남</a></li>
+                <li><a href="/map_17" class="ev">제주</a></li>
+     </ul>
+              </div>
+
+        </div>
+
+
+        <div class="middle-center-2">
+            <div id="map" style="width:1180px;height:400px;"></div>
+
+          <!-- jQuery 별도 로드가 필요합니다! -->
+          <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=11be47e98d6e955ad67cc5a03b1b8141&libraries=clusterer"></script>
+          <script>
+          var map = new kakao.maps.Map(document.getElementById('map'), { // 지도를 표시할 div
+              center : new kakao.maps.LatLng(35.81327835271975, 127.13550090460092), // 지도의 중심좌표
+              level : 11 // 지도의 확대 레벨
+          });
+
+          // 마커 클러스터러를 생성합니다
+          var clusterer = new kakao.maps.MarkerClusterer({
+              map: map, // 마커들을 클러스터로 관리하고 표시할 지도 객체
+              averageCenter: true, // 클러스터에 포함된 마커들의 평균 위치를 클러스터 마커 위치로 설정
+              minLevel: 10, // 클러스터 할 최소 지도 레벨
+              calculator: [10, 30, 50], // 클러스터의 크기 구분 값, 각 사이값마다 설정된 text나 style이 적용된다
+              texts: getTexts,
+              styles: [{ // calculator 각 사이 값 마다 적용될 스타일을 지정한다
+                      width : '30px', height : '30px',
+                      background: 'rgba(51, 204, 255, .8)',
+                      borderRadius: '15px',
+                      color: '#000',
+                      textAlign: 'center',
+                      fontWeight: 'bold',
+                      lineHeight: '31px'
+                  },
+                  {
+                      width : '40px', height : '40px',
+                      background: 'rgba(255, 153, 0, .8)',
+                      borderRadius: '20px',
+                      color: '#000',
+                      textAlign: 'center',
+                      fontWeight: 'bold',
+                      lineHeight: '41px'
+                  },
+                  {
+                      width : '50px', height : '50px',
+                      background: 'rgba(255, 51, 204, .8)',
+                      borderRadius: '25px',
+                      color: '#000',
+                      textAlign: 'center',
+                      fontWeight: 'bold',
+                      lineHeight: '51px'
+                  },
+                  {
+                      width : '60px', height : '60px',
+                      background: 'rgba(255, 80, 80, .8)',
+                      borderRadius: '30px',
+                      color: '#000',
+                      textAlign: 'center',
+                      fontWeight: 'bold',
+                      lineHeight: '61px'
+                  }
+              ]
+          });
+
+          // 클러스터 내부에 삽입할 문자열 생성 함수입니다
+          function getTexts( count ) {
+
+            // 한 클러스터 객체가 포함하는 마커의 개수에 따라 다른 텍스트 값을 표시합니다
+            if(count < 10) {
+              return '10-';
+            } else if(count < 25) {
+              return '10+';
+            } else if(count < 75) {
+              return '25+';
+            } else {
+              return '75+';
+            }
+          }
+
+          // 데이터를 가져오기 위해 jQuery를 사용합니다
+          // 데이터를 가져와 마커를 생성하고 클러스터러 객체에 넘겨줍니다
+          $.get("/static/data/jb.json", function(data) {
+              // 데이터에서 좌표 값을 가지고 마커를 표시합니다
+              // 마커 클러스터러로 관리할 마커 객체는 생성할 때 지도 객체를 설정하지 않습니다
+              var markers = $(data.positions).map(function(i, position) {
+                  return new kakao.maps.Marker({
+                      position : new kakao.maps.LatLng(position.lat, position.lng)
+                  });
+              });
+
+              // 클러스터러에 마커들을 추가합니다
+              clusterer.addMarkers(markers);
+          });
+          </script>
+
+        </div>
+      </div>
+
+    <div class="middle-left">
+
+    </div>
+</div>
+ <div class="bottom">
+    <address>
+      <h3>2021.01.04 / Team Kosy / shimwh81@naver.com / Big Data 분석</h3>
+    </address>
+  </div>
+
+
+</body>
+</html>

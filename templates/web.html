@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Kosy</title>
+    <link rel="stylesheet" type="text/css" href="static/css/main.css">
+    <link rel="stylesheet" type="text/css" href="static/css/menu.css">
+    <link rel="stylesheet" type="text/css" href="static/css/layout4.css">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <link rel="icon" href="static/img/favicon.png">
+    <script type="text/javascript" src="static/js/kosy.js"></script>
+
+</head>
+
+<body>
+<div class="container">
+  <!-- TOP -->
+  <div class="top">
+    <!-- 상단 메뉴 -->
+    <nav class="navigation">
+      <ul class="menu">
+        <li class="menu__item">
+          <a href="/" class="menu__link">
+          <img src="static/img/logo2.png"></a>
+        </li>
+
+        <li class="menu__item">
+          <a href="/kosy" class="menu__link">
+            <span class="menu__title">
+              <span class="menu__first-word" data-hover="Team">
+                Team
+              </span>
+              <span class="menu__second-word" data-hover="Kosy">
+                Kosy
+              </span>
+            </span>
+          </a>
+        </li>
+
+        <li class="menu__item">
+          <a href="/data" class="menu__link">
+            <span class="menu__title">
+              <span class="menu__first-word" data-hover="Data">
+                Data
+              </span>
+              <span class="menu__second-word" data-hover="분석">
+                분석
+              </span>
+            </span>
+          </a>
+        </li>
+
+        <li class="menu__item">
+          <a href="/map" class="menu__link">
+            <span class="menu__title">
+              <span class="menu__first-word" data-hover="충전소">
+                충전소
+              </span>
+              <span class="menu__second-word" data-hover="찾기">
+                찾기
+              </span>
+            </span>
+          </a>
+        </li>
+
+        <li class="menu__item">
+          <a href="/kosyInfo" class="menu__link">
+            <span class="menu__title">
+              <span class="menu__first-word" data-hover="Kosy">
+                Kosy
+              </span>
+              <span class="menu__second-word" data-hover="Info">
+                Info
+              </span>
+            </span>
+          </a>
+        </li>
+
+        <li class="menu__item">
+          <a href="/web" class="menu__link">
+            <span class="menu__title">
+              <span class="menu__first-word" data-hover="Web">
+                Web
+              </span>
+              <span class="menu__second-word" data-hover="Data">
+                Data
+              </span>
+            </span>
+          </a>
+        </li>
+
+        <li class="menu__item">
+          <a href="/ment" class="menu__link">
+            <span class="menu__title">
+              <span class="menu__first-word" data-hover="Kosy">
+                Kosy
+              </span>
+              <span class="menu__second-word" data-hover="Ment">
+                Ment
+              </span>
+            </span>
+          </a>
+        </li>
+
+        {% if session.get('logFlag') != True %}
+        <li class="menu__item">
+          <a href="/login" class="menu__link">
+            <span class="menu__title">
+              <span class="menu__first-word" data-hover="Log">
+                Log
+              </span>
+              <span class="menu__second-word" data-hover="In">
+                In
+              </span>
+            </span>
+          </a>
+        </li>
+        {% else %}
+        <li class="menu__item">
+          <a href="/myPage" class="menu__link">
+            <span class="menu__title">
+              <span class="menu__first-word" data-hover="My">
+                My
+              </span>
+              <span class="menu__second-word" data-hover="Page">
+                Page
+              </span>
+            </span>
+          </a>
+        </li>
+        {% endif %}
+
+        {% if session.get('logFlag') == True %}
+        <li class="menu__item">
+          <a href="/logOut" class="menu__link">
+            <span class="menu__title">
+              <span class="menu__first-word" data-hover="Log">
+                Log
+              </span>
+              <span class="menu__second-word" data-hover="Out">
+                Out
+              </span>
+            </span>
+          </a>
+        </li>
+        {% endif %}
+      </ul>
+    </nav>
+</div>
+    <!-- 상단 메뉴 끝 -->
+
+
+  <!-- MIDDLE -->
+  <div class="middle">
+
+      <div class="middle-right">
+        <img id="dataimage" src="static/img/web_main.png" width=100% height=100%>
+      </div>
+
+    <div class="middle-left">
+      <div class="middle-left-1">
+        <div align="center">
+            <h1><img src="/static/img/ment.png"Web 개발</h1>
+            Python Flask<br>
+            기반으로 SQL,CSS,JS를<br>
+            사용하여 web 환경을<br>
+            개발하였습니다.
+            <br>
+
+            </div>
+      </div>
+      <hr>
+
+      <div class="middle-left-2">
+        <div align="center">
+          <h3>Flask / SQL</h3>
+          <select id="team1" onchange="drawImage1()">
+          <option selected>--선택 하세요 --
+          <option value="static/img/flaskd.png">Web 개발 개요
+          <option value="static/img/flask_1.png">Flask 구조-1
+          <option value="static/img/flask_2.png">Flask 구조-2
+          <option value="static/img/flask_3.png">Flask 구조-3
+          <option value="static/img/flask_4.png">Flask 구조-4
+          <option value="static/img/sql_1.png">SQL Tables
+          <option value="static/img/sql_2.png">SQL Query
+          </select>
+          </div>
+          </div>
+      <hr>
+
+      <div class="middle-left-3">
+        <div align="center">
+        <h3>HTML / CSS / JS</h3>
+        <select id="team2" onchange="drawImage2()">
+        <option selected>--선택 하세요 --
+        <option value="static/img/layout.png">Layout
+        <option value="static/img/mcss.png">Main CSS
+        <option value="static/img/css_1.png">CSS
+        <option value="static/img/js_1.png">JS
+        <option value="static/img/kakaomap.png">KAKAO API
+        <option value="static/img/jinja2.png">HTML / Jinja2
+        </select>
+          </div>
+      </div>
+    </div>
+    </div>
+  <div class="bottom">
+    <address>
+      <h3>2021.01.04 / Team Kosy / shimwh81@naver.com / Big Data 분석</h3>
+    </address>
+  </div>
+
+
+</body>
+</html>
