@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Kosy</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/pj.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/mm.css')}}">
+    <style>
+        body{
+            background-image: url('static/img/bgimg.png');
+            background-repeat: no-repeat;
+            background-position: right bottom;
+
+        }
+    </style>
+    <style>
+        .blue{color:blue;}
+    </style>
+
+</head>
+<body>
+<header></header>
+	<!-- 상단 메뉴 -->
+    <nav class="navigation">
+        <ul class="menu">
+          <li class="menu__item">
+            <a href="/" class="menu__link">
+            <img src="static/img/logo2.png">
+            </a>
+          </li>
+
+          <li class="menu__item">
+            <a href="/login" class="menu__link">
+              <span class="menu__title">
+                <span class="menu__first-word" data-hover="Log">
+                  Log
+                </span>
+                <span class="menu__second-word" data-hover="In">
+                  In
+                </span>
+              </span>
+            </a>
+          </li>
+
+          <li class="menu__item">
+            <a href="/kosy" class="menu__link">
+              <span class="menu__title">
+                <span class="menu__first-word" data-hover="Team">
+                  Team
+                </span>
+                <span class="menu__second-word" data-hover="Kosy">
+                  Kosy
+                </span>
+              </span>
+            </a>
+          </li>
+
+          <li class="menu__item">
+            <a href="/cal" class="menu__link">
+              <span class="menu__title">
+                <span class="menu__first-word" data-hover="보조금">
+                  보조금
+                </span>
+                <span class="menu__second-word" data-hover="계산">
+                  계산
+                </span>
+              </span>
+            </a>
+          </li>
+
+          <li class="menu__item">
+            <a href="/search" class="menu__link">
+              <span class="menu__title">
+                <span class="menu__first-word" data-hover="NEWS">
+                  NEWS
+                </span>
+                <span class="menu__second-word" data-hover="검색">
+                  검색
+                </span>
+              </span>
+            </a>
+          </li>
+
+          <li class="menu__item">
+            <a href="/data" class="menu__link">
+              <span class="menu__title">
+                <span class="menu__first-word" data-hover="Data">
+                  Data
+                </span>
+                <span class="menu__second-word" data-hover="분석">
+                  분석
+                </span>
+              </span>
+            </a>
+          </li>
+
+          <li class="menu__item">
+            <a href="/map" class="menu__link">
+              <span class="menu__title">
+                <span class="menu__first-word" data-hover="충전소">
+                  충전소
+                </span>
+                <span class="menu__second-word" data-hover="찾기">
+                  찾기
+                </span>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- 상단 메뉴 끝 -->
+      <div align="center" class="pink">
+
+        <h1 ><img src="/static/img/icon4.png">검색 결과</h1>
+            </div>
+        <hr>
+       <!-- <ul>
+            {% for item in lists %}
+             <li>{{item[0]}} / {{item[1]}} / <a href="{{item[2]}}">{{item[2]}}</a></li>
+            {% endfor %}
+        </ul> -->
+        <br>
+
+        <br>
+        <table border="1" align="center">
+            {% if skind == 1 %}
+            <tr><th bgcolor="green">제목</th><th bgcolor="green">링크</th><th bgcolor="green">날짜</th></tr>
+            {% endif %}
+            {% if skind == 2 %}
+            <tr><th bgcolor="green">제목</th><th bgcolor="green">가격</th><th bgcolor="green">출판사</th></tr>
+            {% endif %}
+            {% if skind == 3 %}
+            <tr><th bgcolor="green">제목</th><th bgcolor="green">블로거</th><th bgcolor="green">링크</th></tr>
+            {% endif %}
+            {% for items in lists %}
+            <tr>
+                {% for item in items %}
+                <td>{{item}}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+
+        </table>
+       <div align="center"><a href="/search">[ Back ]</a></div>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Kosy</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/pj.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/mm.css')}}">
+    <style>
+        body{
+            background-image: url('static/img/bgimg.png');
+            background-repeat: no-repeat;
+            background-position: right bottom;
+        }
+    </style>
+
+</head>
+<body>
+<header></header>
+	<!-- 상단 메뉴 -->
+    <nav class="navigation">
+        <ul class="menu">
+          <li class="menu__item">
+            <a href="/" class="menu__link">
+            <img src="static/img/logo2.png">
+            </a>
+          </li>
+
+          <li class="menu__item">
+            <a href="/login" class="menu__link">
+              <span class="menu__title">
+                <span class="menu__first-word" data-hover="Log">
+                  Log
+                </span>
+                <span class="menu__second-word" data-hover="In">
+                  In
+                </span>
+              </span>
+            </a>
+          </li>
+
+          <li class="menu__item">
+            <a href="/kosy" class="menu__link">
+              <span class="menu__title">
+                <span class="menu__first-word" data-hover="Team">
+                  Team
+                </span>
+                <span class="menu__second-word" data-hover="Kosy">
+                  Kosy
+                </span>
+              </span>
+            </a>
+          </li>
+
+          <li class="menu__item">
+            <a href="/cal" class="menu__link">
+              <span class="menu__title">
+                <span class="menu__first-word" data-hover="보조금">
+                  보조금
+                </span>
+                <span class="menu__second-word" data-hover="계산">
+                  계산
+                </span>
+              </span>
+            </a>
+          </li>
+
+          <li class="menu__item">
+            <a href="/search" class="menu__link">
+              <span class="menu__title">
+                <span class="menu__first-word" data-hover="NEWS">
+                  NEWS
+                </span>
+                <span class="menu__second-word" data-hover="검색">
+                  검색
+                </span>
+              </span>
+            </a>
+          </li>
+
+          <li class="menu__item">
+            <a href="/data" class="menu__link">
+              <span class="menu__title">
+                <span class="menu__first-word" data-hover="Data">
+                  Data
+                </span>
+                <span class="menu__second-word" data-hover="분석">
+                  분석
+                </span>
+              </span>
+            </a>
+          </li>
+
+          <li class="menu__item">
+            <a href="/map" class="menu__link">
+              <span class="menu__title">
+                <span class="menu__first-word" data-hover="충전소">
+                  충전소
+                </span>
+                <span class="menu__second-word" data-hover="찾기">
+                  찾기
+                </span>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- 상단 메뉴 끝 -->
+      <div align="center">
+      <h1><img src="/static/img/icon2.png">보조금 계산기</h1><hr>
+      <form action="/calOk" method="post">
+      <input type="hidden" name="uIdx">
+      차종 : <input type="text" name="uId">
+      <br>
+      <br>
+      보조금 : <input type="text" name="uPwd">
+      <hr>
+      <input type="submit" value="[계산하기]">
+      </form></div>
+
+</body>
+</html>
