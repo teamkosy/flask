@@ -1,152 +1,6 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Kosy</title>
-    <link rel="stylesheet" type="text/css" href="static/css/main.css">
-    <link rel="stylesheet" type="text/css" href="static/css/menu.css">
-    <link rel="stylesheet" type="text/css" href="static/css/layout3.css">
-    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
-    <link rel="icon" href="static/img/favicon.png">
-    <script type="text/javascript" src="static/js/carInfo.js"></script>
-
-</head>
-
-<body>
-<div class="container">
-  <!-- TOP -->
-  <nav class="navigation">
-      <ul class="menu">
-        <li class="menu__item">
-          <a href="/" class="menu__link">
-          <img src="static/img/logo2.png"></a>
-        </li>
-
-        <li class="menu__item">
-          <a href="/kosy" class="menu__link">
-            <span class="menu__title">
-              <span class="menu__first-word" data-hover="Team">
-                Team
-              </span>
-              <span class="menu__second-word" data-hover="Kosy">
-                Kosy
-              </span>
-            </span>
-          </a>
-        </li>
-
-        <li class="menu__item">
-          <a href="/data" class="menu__link">
-            <span class="menu__title">
-              <span class="menu__first-word" data-hover="Data">
-                Data
-              </span>
-              <span class="menu__second-word" data-hover="분석">
-                분석
-              </span>
-            </span>
-          </a>
-        </li>
-
-        <li class="menu__item">
-          <a href="/map" class="menu__link">
-            <span class="menu__title">
-              <span class="menu__first-word" data-hover="충전소">
-                충전소
-              </span>
-              <span class="menu__second-word" data-hover="찾기">
-                찾기
-              </span>
-            </span>
-          </a>
-        </li>
-
-        <li class="menu__item">
-          <a href="/kosyInfo" class="menu__link">
-            <span class="menu__title">
-              <span class="menu__first-word" data-hover="Kosy">
-                Kosy
-              </span>
-              <span class="menu__second-word" data-hover="Info">
-                Info
-              </span>
-            </span>
-          </a>
-        </li>
-
-        <li class="menu__item">
-          <a href="/web" class="menu__link">
-            <span class="menu__title">
-              <span class="menu__first-word" data-hover="Web">
-                Web
-              </span>
-              <span class="menu__second-word" data-hover="Data">
-                Data
-              </span>
-            </span>
-          </a>
-        </li>
-
-        <li class="menu__item">
-          <a href="/ment" class="menu__link">
-            <span class="menu__title">
-              <span class="menu__first-word" data-hover="Kosy">
-                Kosy
-              </span>
-              <span class="menu__second-word" data-hover="Ment">
-                Ment
-              </span>
-            </span>
-          </a>
-        </li>
-
-        {% if session.get('logFlag') != True %}
-        <li class="menu__item">
-          <a href="/login" class="menu__link">
-            <span class="menu__title">
-              <span class="menu__first-word" data-hover="Log">
-                Log
-              </span>
-              <span class="menu__second-word" data-hover="In">
-                In
-              </span>
-            </span>
-          </a>
-        </li>
-        {% else %}
-        <li class="menu__item">
-          <a href="/myPage" class="menu__link">
-            <span class="menu__title">
-              <span class="menu__first-word" data-hover="My">
-                My
-              </span>
-              <span class="menu__second-word" data-hover="Page">
-                Page
-              </span>
-            </span>
-          </a>
-        </li>
-        {% endif %}
-
-        {% if session.get('logFlag') == True %}
-        <li class="menu__item">
-          <a href="/logOut" class="menu__link">
-            <span class="menu__title">
-              <span class="menu__first-word" data-hover="Log">
-                Log
-              </span>
-              <span class="menu__second-word" data-hover="Out">
-                Out
-              </span>
-            </span>
-          </a>
-        </li>
-        {% endif %}
-      </ul>
-    </nav>
-    <!-- 상단 메뉴 끝 -->
-
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="static/css/layout3.css">
 
   <!-- MIDDLE -->
   <div class="middle">
@@ -157,10 +11,11 @@
 
       <div class="middle-center">
         <div align="center">
-            <h1><img src="/static/img/icon1.png">Car Info Search</h1><hr>
+            <h1><img src="/static/img/icon1.png">EV-Car Info</h1><hr>
             <!--<form action="/calOk" method="get">-->
             <select id="carInfo" onchange="drawImage()">
-                  <option>--차종을 선택하세요--</option>
+                  <option value="static/img/cari7.png">--차종을 선택하세요--</option>
+                  <option value="static/img/cari0.png"><테슬라>테슬라 전기차</option>
                   <option value="static/img/cari1.png"><현대>코나 전기차</option>
                   <option value="static/img/cari2.png"><현대>아이오닉 전기차</option>
                   <option value="static/img/cari3.png"><기아>니로 전기차</option>
@@ -174,19 +29,10 @@
             </div>
             <hr>
             <br>
-            <img id="dataimage" src="static/img/icon1.png" width=800px height=300px>
+            <img id="dataimage" src="static/img/cari7.png" width=800px height=300px>
             <br>
             <div align="center"><a href="/kosyInfo">[ Back ]</a></div>
-            <!--<table border="1" align="center">-->
-            <!--    <tr><th bgcolor="pink">차종</th><th bgcolor="pink">가격</th><th bgcolor="pink">보조금</th><th bgcolor="pink">배터리용량</th><th bgcolor="pink">연비</th></tr>-->
-            <!--    {% for item in row %}-->
-            <!--    <tr>-->
-            <!--    {% for info in item %}-->
-            <!--        <td>{{info}}</td>-->
-            <!--    {% endfor %}-->
-            <!--    </tr>-->
-            <!--    {% endfor %}-->
-            <!--</table>-->
+
       </div>
 
       <div class="middle-right">
@@ -194,12 +40,4 @@
       </div>
     </div>
     </div>
-  <div class="bottom">
-    <address>
-      <h3>2021.01.04 / Team Kosy / shimwh81@naver.com / Big Data 분석</h3>
-    </address>
-  </div>
-
-
-</body>
-</html>
+{% endblock %}

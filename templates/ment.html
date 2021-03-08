@@ -1,154 +1,6 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Kosy</title>
-    <link rel="stylesheet" type="text/css" href="static/css/main.css">
-    <link rel="stylesheet" type="text/css" href="static/css/menu.css">
-    <link rel="stylesheet" type="text/css" href="static/css/layout6.css">
-    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
-    <link rel="icon" href="static/img/favicon.png">
-    <script type="text/javascript" src="static/js/bigdata.js"></script>
-
-</head>
-
-<body>
-<div class="container">
-  <!-- TOP -->
-  <div class="top">
-    <!-- 상단 메뉴 -->
-    <nav class="navigation">
-      <ul class="menu">
-        <li class="menu__item">
-          <a href="/" class="menu__link">
-          <img src="static/img/logo2.png"></a>
-        </li>
-
-        <li class="menu__item">
-          <a href="/kosy" class="menu__link">
-            <span class="menu__title">
-              <span class="menu__first-word" data-hover="Team">
-                Team
-              </span>
-              <span class="menu__second-word" data-hover="Kosy">
-                Kosy
-              </span>
-            </span>
-          </a>
-        </li>
-
-        <li class="menu__item">
-          <a href="/data" class="menu__link">
-            <span class="menu__title">
-              <span class="menu__first-word" data-hover="Data">
-                Data
-              </span>
-              <span class="menu__second-word" data-hover="분석">
-                분석
-              </span>
-            </span>
-          </a>
-        </li>
-
-        <li class="menu__item">
-          <a href="/map" class="menu__link">
-            <span class="menu__title">
-              <span class="menu__first-word" data-hover="충전소">
-                충전소
-              </span>
-              <span class="menu__second-word" data-hover="찾기">
-                찾기
-              </span>
-            </span>
-          </a>
-        </li>
-
-        <li class="menu__item">
-          <a href="/kosyInfo" class="menu__link">
-            <span class="menu__title">
-              <span class="menu__first-word" data-hover="Kosy">
-                Kosy
-              </span>
-              <span class="menu__second-word" data-hover="Info">
-                Info
-              </span>
-            </span>
-          </a>
-        </li>
-
-        <li class="menu__item">
-          <a href="/web" class="menu__link">
-            <span class="menu__title">
-              <span class="menu__first-word" data-hover="Web">
-                Web
-              </span>
-              <span class="menu__second-word" data-hover="Data">
-                Data
-              </span>
-            </span>
-          </a>
-        </li>
-
-        <li class="menu__item">
-          <a href="/ment" class="menu__link">
-            <span class="menu__title">
-              <span class="menu__first-word" data-hover="Kosy">
-                Kosy
-              </span>
-              <span class="menu__second-word" data-hover="Ment">
-                Ment
-              </span>
-            </span>
-          </a>
-        </li>
-
-        {% if session.get('logFlag') != True %}
-        <li class="menu__item">
-          <a href="/login" class="menu__link">
-            <span class="menu__title">
-              <span class="menu__first-word" data-hover="Log">
-                Log
-              </span>
-              <span class="menu__second-word" data-hover="In">
-                In
-              </span>
-            </span>
-          </a>
-        </li>
-        {% else %}
-        <li class="menu__item">
-          <a href="/myPage" class="menu__link">
-            <span class="menu__title">
-              <span class="menu__first-word" data-hover="My">
-                My
-              </span>
-              <span class="menu__second-word" data-hover="Page">
-                Page
-              </span>
-            </span>
-          </a>
-        </li>
-        {% endif %}
-
-        {% if session.get('logFlag') == True %}
-        <li class="menu__item">
-          <a href="/logOut" class="menu__link">
-            <span class="menu__title">
-              <span class="menu__first-word" data-hover="Log">
-                Log
-              </span>
-              <span class="menu__second-word" data-hover="Out">
-                Out
-              </span>
-            </span>
-          </a>
-        </li>
-        {% endif %}
-      </ul>
-    </nav>
-    <!-- 상단 메뉴 끝 -->
-
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="static/css/layout6.css">
 
   <!-- MIDDLE -->
   <div class="middle">
@@ -161,10 +13,10 @@
 
       <div class="middle-left-1">
         <div align="center">
-            <h3><img src="/static/img/bigd1.png">오홍직</h3>
+            <h2><img src="/static/img/bigd1.png">오홍직</h2>
 
           <select id="data1" onchange="drawImage1()">
-          <option selected>-- 선택하세요 --
+          <option value="static/img/ment_main.png" selected>-- 선택하세요 --
           <option value="static/img/o_1.png">작업 스샷1
           <option value="static/img/o_2.png">작업 스샷2
           <option value="static/img/o_3.png">작업 스샷3
@@ -178,10 +30,10 @@
 
       <div class="middle-left-2">
         <div align="center">
-            <h3><img src="/static/img/bigd2.png">김세은</h3>
+            <h2><img src="/static/img/bigd2.png">김세은</h2>
 
           <select id="data2" onchange="drawImage2()">
-          <option selected>-- 선택하세요 --
+          <option value="static/img/ment_main.png" selected>-- 선택하세요 --
           <option value="static/img/k_1.png">작업 스샷1
           <option value="static/img/k_2.png">작업 스샷2
           <option value="static/img/k_3.png">작업 스샷3
@@ -195,10 +47,10 @@
 
       <div class="middle-left-3">
         <div align="center">
-            <h3><img src="/static/img/web.png">심우현</h3>
+            <h2><img src="/static/img/web.png">심우현</h2>
 
           <select id="data3" onchange="drawImage3()">
-          <option selected>-- 선택하세요 --
+          <option value="static/img/ment_main.png" selected>-- 선택하세요 --
           <option value="static/img/s_1.png">작업 스샷1
           <option value="static/img/s_2.png">작업 스샷2
           <option value="static/img/s_3.png">작업 스샷3
@@ -212,10 +64,10 @@
 
       <div class="middle-left-4">
         <div align="center">
-            <h3><img src="/static/img/web.png">양승호</h3>
+            <h2><img src="/static/img/web.png">양승호</h2>
 
           <select id="data4" onchange="drawImage4()">
-          <option selected>-- 선택하세요 --
+          <option value="static/img/ment_main.png" selected>-- 선택하세요 --
           <option value="static/img/y_1.png">작업 스샷1
           <option value="static/img/y_2.png">작업 스샷2
           <option value="static/img/y_3.png">작업 스샷3
@@ -226,13 +78,4 @@
           </div>
       </div>
     </div>
-    </div>
-  <div class="bottom">
-    <address>
-      <h3>2021.01.04 / Team Kosy / shimwh81@naver.com / Big Data 분석</h3>
-    </address>
-  </div>
-
-
-</body>
-</html>
+{% endblock %}

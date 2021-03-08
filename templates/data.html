@@ -1,171 +1,39 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Kosy</title>
-    <link rel="stylesheet" type="text/css" href="static/css/main.css">
-    <link rel="stylesheet" type="text/css" href="static/css/menu.css">
-    <link rel="stylesheet" type="text/css" href="static/css/layout6.css">
-    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
-    <link rel="icon" href="static/img/favicon.png">
-    <script type="text/javascript" src="static/js/bigdata.js"></script>
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="static/css/layout6.css">
 
-</head>
-
-<body>
-<div class="container">
-  <!-- TOP -->
-  <div class="top">
-    <!-- 상단 메뉴 -->
-    <nav class="navigation">
-      <ul class="menu">
-        <li class="menu__item">
-          <a href="/" class="menu__link">
-          <img src="static/img/logo2.png"></a>
-        </li>
-
-        <li class="menu__item">
-          <a href="/kosy" class="menu__link">
-            <span class="menu__title">
-              <span class="menu__first-word" data-hover="Team">
-                Team
-              </span>
-              <span class="menu__second-word" data-hover="Kosy">
-                Kosy
-              </span>
-            </span>
-          </a>
-        </li>
-
-        <li class="menu__item">
-          <a href="/data" class="menu__link">
-            <span class="menu__title">
-              <span class="menu__first-word" data-hover="Data">
-                Data
-              </span>
-              <span class="menu__second-word" data-hover="분석">
-                분석
-              </span>
-            </span>
-          </a>
-        </li>
-
-        <li class="menu__item">
-          <a href="/map" class="menu__link">
-            <span class="menu__title">
-              <span class="menu__first-word" data-hover="충전소">
-                충전소
-              </span>
-              <span class="menu__second-word" data-hover="찾기">
-                찾기
-              </span>
-            </span>
-          </a>
-        </li>
-
-        <li class="menu__item">
-          <a href="/kosyInfo" class="menu__link">
-            <span class="menu__title">
-              <span class="menu__first-word" data-hover="Kosy">
-                Kosy
-              </span>
-              <span class="menu__second-word" data-hover="Info">
-                Info
-              </span>
-            </span>
-          </a>
-        </li>
-
-        <li class="menu__item">
-          <a href="/web" class="menu__link">
-            <span class="menu__title">
-              <span class="menu__first-word" data-hover="Web">
-                Web
-              </span>
-              <span class="menu__second-word" data-hover="Data">
-                Data
-              </span>
-            </span>
-          </a>
-        </li>
-
-        <li class="menu__item">
-          <a href="/ment" class="menu__link">
-            <span class="menu__title">
-              <span class="menu__first-word" data-hover="Kosy">
-                Kosy
-              </span>
-              <span class="menu__second-word" data-hover="Ment">
-                Ment
-              </span>
-            </span>
-          </a>
-        </li>
-
-        {% if session.get('logFlag') != True %}
-        <li class="menu__item">
-          <a href="/login" class="menu__link">
-            <span class="menu__title">
-              <span class="menu__first-word" data-hover="Log">
-                Log
-              </span>
-              <span class="menu__second-word" data-hover="In">
-                In
-              </span>
-            </span>
-          </a>
-        </li>
-        {% else %}
-        <li class="menu__item">
-          <a href="/myPage" class="menu__link">
-            <span class="menu__title">
-              <span class="menu__first-word" data-hover="My">
-                My
-              </span>
-              <span class="menu__second-word" data-hover="Page">
-                Page
-              </span>
-            </span>
-          </a>
-        </li>
-        {% endif %}
-
-        {% if session.get('logFlag') == True %}
-        <li class="menu__item">
-          <a href="/logOut" class="menu__link">
-            <span class="menu__title">
-              <span class="menu__first-word" data-hover="Log">
-                Log
-              </span>
-              <span class="menu__second-word" data-hover="Out">
-                Out
-              </span>
-            </span>
-          </a>
-        </li>
-        {% endif %}
-      </ul>
-    </nav>
-    <!-- 상단 메뉴 끝 -->
-
+    <script>
+        function btnImg()
+        {
+          document.getElementById("dataimage").src = "static/img/data_rs.png";
+          document.getElementById("dataimage");
+        }
+   </script>
+    <script>
+        function btnImg2()
+        {
+          document.getElementById("dataimage").src = "static/img/source.png";
+          document.getElementById("dataimage");
+        }
+   </script>
 
   <!-- MIDDLE -->
   <div class="middle">
 
     <div class="middle-right">
-        <img id="dataimage" src="static/img/bigdata.png" width=1000px height=600px>
+        <img id="dataimage" src="static/img/databg.png" width=960px height=720px>
+<!--        <img id="data5" src="static/img/data_rs.png" width=960px height=720px>-->
       </div>
 
     <div class="middle-left">
 
       <div class="middle-left-1">
 
-            <h3><img src="/static/img/icon6.png">전기차 키워드 분석</h3>
+            <h2><img src="/static/img/icon6.png">전기차 키워드 분석</h2>
           <select id="data4" onchange="drawImage4()">
-          <option selected>-- 선택하세요 --
-          <option value="static/img/dtest2.png">전기차 키워드 분석1
-          <option value="static/img/dtest1.png">전기차 키워드 분석2
+          <option value="static/img/databg.png" selected>-- 선택하세요 --
+          <option value="static/img/testdata.png">전기차 키워드 분석
+          <option value="static/img/testdata3.png">전기차 충전소 키워드 분석
           <option value="static/img/kw_3.png">전기차 키워드 분석3
           </select>
 
@@ -173,11 +41,11 @@
       <hr>
       <div class="middle-left-2">
 
-            <h3><img src="/static/img/icon3.png">전기차 유형별 증감현황</h3>
+            <h2><img src="/static/img/icon3.png">전기차 유형별 증감현황</h2>
 
           <select id="data3" onchange="drawImage3()">
-          <option selected>-- 선택하세요 --
-          <option value="static/img/data_1.png">전기차 유형별 증감 현황
+          <option value="static/img/databg.png" selected>-- 선택하세요 --
+          <option value="static/img/data2_1.png">전기차 유형별 증감 현황
           </select>
 
       </div>
@@ -185,53 +53,48 @@
 
       <div class="middle-left-3">
 
-            <h3><img src="/static/img/icon1.png">지역별 전기차 / 충전소 증감현황</h3>
+            <h2><img src="/static/img/icon1.png">지역별 전기차 / 충전소 증감현황</h2>
 
           <select id="data2" onchange="drawImage2()">
-          <option selected>-- 선택하세요 --
-          <option value="static/img/car1.png">지역별 전기차 증감 현황
-          <option value="static/img/car2.png">지역별 전기차 증감 현황_bar
-          <option value="static/img/bat1.png">지역별 전기차 충전소 증감 현황
-          <option value="static/img/bat2.png">지역별 전기차 충전소 증감 현황_bar
+          <option value="static/img/databg.png" selected>-- 선택하세요 --
+          <option value="static/img/data3_1.png">지역별 전기차 증감 현황
+          <option value="static/img/data3_2.png">지역별 전기차 충전소 증감 현황
           </select>
 
       </div>
       <hr>
       <div class="middle-left-4">
 
-            <h3><img src="/static/img/icon5.png">전기차 / 충전소 상관관계</h3>
+            <h2><img src="/static/img/icon5.png">전기차 / 충전소 상관관계</h2>
 
           <select id="data1" onchange="drawImage1()">
-          <option value="static/img/data1.png" selected>-- 선택하세요 --
-          <option value="static/img/all.png">전체
-          <option value="static/img/seoul.png">서울시
-          <option value="static/img/ic.png">인천
-          <option value="static/img/gg.png">경기도
-          <option value="static/img/sj.png">세종특별시
-          <option value="static/img/dj.png">대전
-          <option value="static/img/dg.png">대구
-          <option value="static/img/gj.png">광주
-          <option value="static/img/us.png">울산
-          <option value="static/img/bs.png">부산
-          <option value="static/img/gw.png">강원도
-          <option value="static/img/cb.png">충청북도
-          <option value="static/img/cn.png">충청남도
-          <option value="static/img/gb.png">경상북도
-          <option value="static/img/gn.png">경상남도
-          <option value="static/img/jb.png">전라북도
-          <option value="static/img/jn.png">전라남도
-          <option value="static/img/jeju.png">제주도
+          <option value="static/img/databg.png" selected>-- 선택하세요 --
+          <option value="static/img/data4_tot.png">전체
+          <option value="static/img/data4_sw.png">서울특별시
+          <option value="static/img/data4_ic.png">인천광역시
+          <option value="static/img/data4_gg.png">경기도
+          <option value="static/img/data4_sj.png">세종특별자치시
+          <option value="static/img/data4_dj.png">대전광역시
+          <option value="static/img/data4_dg.png">대구광역시
+          <option value="static/img/data4_gj.png">광주광역시
+          <option value="static/img/data4_us.png">울산광역시
+          <option value="static/img/data4_bs.png">부산광역시
+          <option value="static/img/data4_kw.png">강원도
+          <option value="static/img/data4_cb.png">충청북도
+          <option value="static/img/data4_cn.png">충청남도
+          <option value="static/img/data4_gb.png">경상북도
+          <option value="static/img/data4_gn.png">경상남도
+          <option value="static/img/data4_jb.png">전라북도
+          <option value="static/img/data4_jn.png">전라남도
+          <option value="static/img/data4_jeju.png">제주특별자치도
           </select>
+          <br>
+<!--          <div align="center"><input type='button' value='결론' onclick="javascript:openPop()"></div>-->
+
+          <div align="center" ><input type='button' value='결론'  onclick="btnImg()">&nbsp&nbsp<input type='button' value='출처'  onclick="btnImg2()"></div>
+
 
       </div>
 
     </div>
-</div>
-  <div class="bottom">
-    <address>
-      <h3>2021.01.04 / Team Kosy / shimwh81@naver.com / Big Data 분석</h3>
-    </address>
-  </div>
-
-</body>
-</html>
+{% endblock %}

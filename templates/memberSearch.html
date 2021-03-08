@@ -17,9 +17,6 @@
             <hr>
             <br>
             <br>
-            <form action="/memberSearch" method="post">
-              <div align="center">ID로 회원 찾기 : <input type="text" name="uid"><input type="submit" value="검색"></div>
-            </form>
             <table border="1" align="center">
                 <tr><th bgcolor="aqua">IDX</th><th bgcolor="aqua">ID</th><th bgcolor="aqua">PW</th>
                 <th bgcolor="aqua">이름</th><th bgcolor="aqua">닉네임</th>
@@ -35,6 +32,18 @@
                 </tr>
                 {% endfor %}
             </table>
+        <br><br>
+        {% if session['uid'] == rs %}
+        <div align="center">
+        <form action="/modify">
+            <input type="submit" value="정보 수정">
+            </form>&nbsp&nbsp
+        <form action="/del" method="post">
+            <input type="hidden" name="idx">
+            <input type="submit" value="회원 탈퇴">
+            </form>
+        </div>
+        {% endif %}
         <br><br>
            <div align="center"><a href="/myPage">[ Back ]</a></div>
         <br><br>

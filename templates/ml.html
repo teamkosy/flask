@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <link rel="stylesheet" type="text/css" href="static/css/layout5.css">
+
+  <!-- MIDDLE -->
+  <div class="middle">
+
+    <div class="middle-left">
+
+    </div>
+
+      <div class="middle-center">
+        <div align="center">
+            <h1><img src="/static/img/icon7.png">Machine Learning TEST</h1>
+            <hr>
+            <img src="/static/img/ml_1.png">
+          <br><br>
+            정답률 = {{score1}}{{score2}}%<br><br>
+
+
+            리포트 ={{cl_report1}}{{cl_report2}} <br><br>
+
+
+            <br><br>
+            </div>
+           <div align="center"><input type="button" value="학습하기 " onclick="location.href='/ranOk1'">
+           &nbsp&nbsp <input type="button" value="도로주행" onclick="location.href='/ranOk2'"></div>
+            <br><br>
+
+           <div align="center"><a href="https://teamkosy.pythonanywhere.com/kosyInfo">[ Back ]</a></div>
+           <br><br>
+
+      </div>
+
+      <div class="middle-right">
+
+      </div>
+    </div>
+{% endblock %}
